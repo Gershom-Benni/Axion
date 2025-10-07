@@ -46,7 +46,6 @@ class parser:
         return expr
 
     def parse_comparison(self):
-        # expr = self.parse_additive()
         expr = self.parse_bitwise()
         while self.current()[0] in ["<", "<=", ">", ">="]:
             op = self.match(self.current()[0])
@@ -71,7 +70,6 @@ class parser:
 
 
     def parse_additive(self):
-        # expr = self.parse_multiplicative()
         expr = self.parse_shift()
         while self.current()[0] in ["+", "-"]:
             op = self.match(self.current()[0])
